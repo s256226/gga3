@@ -1,8 +1,9 @@
-#version 410 core
+#version 330 core
 
-in vec4 pv;
+uniform mat4 mc;
+layout(location = 0) in vec3 pv;
 
-void main(void)
+void main()
 {
-  gl_Position = pv;
+  gl_Position = mc * vec4(pv, 1.0);
 }
